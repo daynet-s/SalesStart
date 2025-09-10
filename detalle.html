@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SalesStart - Detalle del Juego</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="retro-rgb">
+  <header>
+    <h1>SalesStart</h1>
+  </header>
+
+  <main class="detalle-container">
+    <!-- Columna izquierda: imagen y descripción -->
+    <section class="detalle-left">
+      <div class="game-image">
+        <img id="game-cover" src="" alt="Portada del juego">
+      </div>
+      <div class="game-info">
+        <h2 id="game-title"></h2>
+        <p><strong>ID:</strong> <span id="game-id"></span></p>
+        <p><strong>Desarrollador:</strong> <span id="game-dev"></span></p>
+        <p><strong>Editor:</strong> <span id="game-pub"></span></p>
+        <p><strong>Fecha de lanzamiento:</strong> <span id="game-release"></span></p>
+        <p><strong>Jugadores actuales:</strong> <span id="game-players"></span></p>
+        <p><strong>Precio:</strong> $<span id="game-price"></span></p>
+      </div>
+    </section>
+
+    <!-- Columna derecha: filtros -->
+    <aside class="detalle-right">
+      <h2>Filtros</h2>
+      <div class="filter-group">
+        <label for="platform">Plataforma:</label>
+        <select id="platform">
+          <option value="steam">Steam</option>
+          <option value="epic">Epic Games</option>
+          <option value="xbox">Xbox</option>
+          <option value="playstation">PlayStation</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="country">País:</label>
+        <select id="country">
+          <option value="us">EE.UU (USD)</option>
+          <option value="cl">Chile (CLP)</option>
+          <option value="mx">México (MXN)</option>
+          <option value="es">España (EUR)</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="edition">Edición:</label>
+        <select id="edition">
+          <option value="standard">Standard</option>
+          <option value="deluxe">Deluxe</option>
+          <option value="ultimate">Ultimate</option>
+        </select>
+      </div>
+    </aside>
+  </main>
+
+  <script src="assets/detalle.js"></script>
+</body>
+</html>
