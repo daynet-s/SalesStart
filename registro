@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>SalesStart - Sign up</title>
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+
+    <body>
+        <header style="text-align: center;">
+            <h1>SalesStart</h1>
+        </header>
+
+        <main class="container">
+            <div class="row justify-content-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Registra tu cuenta</h1>
+                        <p1>Complete los campos con su informacion</p1>
+
+                        <form id="formRegistro">
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
