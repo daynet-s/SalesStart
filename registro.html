@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>SalesStart - Sign up</title>
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+
+    <body>
+        <header style="text-align: center;">
+            <h1>SalesStart</h1>
+        </header>
+
+        <!-- Botón circular para ir a la página de inicio -->
+        <a href="inicio.html" class="btn-circular" title="Ir a inicio" style="position: absolute; top: 20px; right: 30px; z-index: 100;">
+            <img src="assets/img/casa.png" alt="Inicio" style="width: 58px; height: 32px;">
+        </a>
+        <main class="container">
+            <div class="row justify-content-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Registra tu cuenta</h1>
+                        <p1>Complete los campos con su informacion</p1>
+
+                        <form id="formRegistro">
+                            <label for="nombre">Nombre:</label><br>
+                            <input type="text" id="nombre" name="nombre" required><br><br>
+                            <label for="apellido">Apellido:</label><br>
+                            <input type="text" id="apellido" name="apellido" required><br><br>
+                            <label for="correo">Correo electrónico:</label><br>
+                            <input type="email" id="correo" name="correo" required><br><br>
+                            <label for="contrasena">Contraseña:</label><br>
+                            <input type="password" id="contrasena" name="contrasena" required><br><br>
+                            <button type="submit">Registrarse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
