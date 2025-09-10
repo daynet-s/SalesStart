@@ -1,3 +1,103 @@
+/* Centrado vertical y horizontal del formulario */
+.container {
+  min-height: 100vh; /* Ocupa toda la altura de la ventana */
+  display: flex; /* Activa flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.card {
+  background: rgba(34, 34, 68, 0.95); /* Fondo oscuro semitransparente */
+  border-radius: 16px; /* Bordes redondeados */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3); /* Sombra para profundidad */
+  padding: 2rem; /* Espacio interno */
+  max-width: 400px; /* Limita el ancho máximo */
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+  display: flex; /* Activa flexbox */
+  flex-direction: column; /* Apila los elementos verticalmente */
+  align-items: center; /* Centra los elementos
+.card-body { horizontalmente */
+}
+
+#formRegistro label {
+  align-self: flex-start; /* Alinea las etiquetas a la izquierda */
+}
+
+#formRegistro input {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 0.5rem; /* Espacio interno en los campos */
+  margin-bottom: 1px; /* Espacio entre campos (ajustar para menos separación) */
+  border-radius: 8px; /* Bordes redondeados */
+  border: none; /* Sin borde */
+}
+
+#formRegistro button {
+  width: 100%; /* Botón ocupa todo el ancho */
+  padding: 0.7rem; /* Espacio interno del botón */
+  border-radius: 8px; /* Bordes redondeados */
+  background: #4e1fa6; /* Color de fondo del botón */
+  color: #fff; /* Color de texto del botón */
+  border: none; /* Sin borde */
+  font-weight: bold; /* Texto en negrita */
+  cursor: pointer; /* Cursor tipo mano */
+  transition: background 0.2s; /* Transición suave al cambiar color */
+}
+
+#formRegistro button:hover {
+  background: #6c2ae6; /* Color de fondo al pasar el mouse */
+}
+/* Centrado vertical y horizontal del formulario */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: rgba(34, 34, 68, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#formRegistro label {
+  align-self: flex-start;
+}
+
+#formRegistro input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: none;
+}
+
+#formRegistro button {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  background: #4e1fa6;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#formRegistro button:hover {
+  background: #6c2ae6;
+}
 /* -------------------- RESET -------------------- */
 /* Quita márgenes y paddings por defecto y asegura box-sizing consistente */
 *,
@@ -339,90 +439,4 @@ header h1 {
 .recent-card .icons img {
   width: 22px;
   margin-bottom: 4px;
-}
-
-
-/* -------------------- DETALLE -------------------- */
-.detalle-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 24px;
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 20px;
-}
-
-.detalle-left {
-  background: rgba(40, 30, 50, 0.8);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-.game-image img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 20px;
-}
-
-.game-info h2 {
-  font-size: 28px;
-  margin-bottom: 12px;
-  color: #16d4ff;
-  text-shadow: 0 0 6px #04eeff, 0 0 12px #024c8e;
-}
-
-.game-info p {
-  margin: 6px 0;
-  font-size: 16px;
-}
-
-/* Columna derecha - filtros */
-.detalle-right {
-  background: rgba(44, 34, 51, 0.9);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-.detalle-right h2 {
-  font-size: 22px;
-  margin-bottom: 16px;
-  border-bottom: 2px solid #a14fc7;
-  padding-bottom: 8px;
-}
-
-.filter-group {
-  margin-bottom: 16px;
-}
-
-.filter-group label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.filter-group select {
-  width: 100%;
-  padding: 8px;
-  border-radius: 6px;
-  border: none;
-  background: #3a3440;
-  color: #fff;
-  font-size: 15px;
-  outline: none;
-}
-
-.filter-group select:hover {
-  background: #4b3f56;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .detalle-container {
-    grid-template-columns: 1fr;
-  }
 }
