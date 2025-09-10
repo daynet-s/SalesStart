@@ -340,3 +340,89 @@ header h1 {
   width: 22px;
   margin-bottom: 4px;
 }
+
+
+/* -------------------- DETALLE -------------------- */
+.detalle-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.detalle-left {
+  background: rgba(40, 30, 50, 0.8);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.game-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.game-info h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #16d4ff;
+  text-shadow: 0 0 6px #04eeff, 0 0 12px #024c8e;
+}
+
+.game-info p {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+/* Columna derecha - filtros */
+.detalle-right {
+  background: rgba(44, 34, 51, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.detalle-right h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #a14fc7;
+  padding-bottom: 8px;
+}
+
+.filter-group {
+  margin-bottom: 16px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: #3a3440;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.filter-group select:hover {
+  background: #4b3f56;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .detalle-container {
+    grid-template-columns: 1fr;
+  }
+}
