@@ -21,11 +21,11 @@
 .card-body { horizontalmente */
 }
 
-#formRegistro label {
+#formSignUpIn label {
   align-self: flex-start; /* Alinea las etiquetas a la izquierda */
 }
 
-#formRegistro input {
+#formSignUpIn input {
   width: 100%; /* Ocupa todo el ancho disponible */
   padding: 0.5rem; /* Espacio interno en los campos */
   margin-bottom: 1px; /* Espacio entre campos (ajustar para menos separación) */
@@ -33,7 +33,7 @@
   border: none; /* Sin borde */
 }
 
-#formRegistro button {
+#formSignUpIn button {
   width: 100%; /* Botón ocupa todo el ancho */
   padding: 0.7rem; /* Espacio interno del botón */
   border-radius: 8px; /* Bordes redondeados */
@@ -45,7 +45,7 @@
   transition: background 0.2s; /* Transición suave al cambiar color */
 }
 
-#formRegistro button:hover {
+#formSignUpIn button:hover {
   background: #6c2ae6; /* Color de fondo al pasar el mouse */
 }
 /* Centrado vertical y horizontal del formulario */
@@ -71,11 +71,11 @@
   align-items: center;
 }
 
-#formRegistro label {
+#formSignUpIn label {
   align-self: flex-start;
 }
 
-#formRegistro input {
+#formSignUpIn input {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
@@ -83,7 +83,7 @@
   border: none;
 }
 
-#formRegistro button {
+#formSignUpIn button {
   width: 100%;
   padding: 0.7rem;
   border-radius: 8px;
@@ -95,7 +95,7 @@
   transition: background 0.2s;
 }
 
-#formRegistro button:hover {
+#formSignUpIn button:hover {
   background: #6c2ae6;
 }
 /* -------------------- RESET -------------------- */

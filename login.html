@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>SalesStart - Login</title>
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+
+    <body>
+        <header style="text-align: center;">
+            <h1>SalesStart</h1>
+        </header>
+        
+        <!--BOTON PARA VOLVER A PAGINA DE INICIO-->
+        <a href="inicio.html" class="btn-circular" title="Ir a inicio" style="position: absolute; top: 20px; right: 30px; z-index: 100;">
+            <img src="assets/img/casa.png" alt="Inicio" style="width: 58px; height: 32px;">
+        </a>
+
+        <!--FORMULARIO INICIO DE SESION-->
+        <main class="container">
+            <div class="row justify-content-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Iniciar Sesion</h1>
+
+                        <form id="formSignUpIn">
+                            <label for="usuario">Nombre / Correo:</label><br>
+                            <input type="text" id="usuario" name="usuario" required><br><br>
+                            <label for="contrasena">Contraseña:</label><br>
+                            <input type="password" id="contrasena" name="contrasena" required>
+                            <u>¿Olvidaste tu contraseña?</u><br><br> <!--Volver a esta linea-->
+                            <button type="submit">Iniciar sesión</button>
+                            <button type="button">Registrarse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
