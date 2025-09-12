@@ -25,28 +25,48 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- Búsqueda ---
+  // Input de búsqueda
   const searchInput = document.querySelector(".search-bar input");
-  const searchBtn = document.querySelector(".search-bar button");
+  const searchButton = document.querySelector(".search-bar button");
 
-  if (searchInput && searchBtn) {
-    searchBtn.addEventListener("click", () => {
-      const value = searchInput.value.trim().toLowerCase();
-      if (value) {
-        // Buscar coincidencia básica con los ids
-        // (ejemplo: "counter-strike 2" -> "cs2")
-        let gameId = null;
-        if (value.includes("counter")) gameId = "cs2";
-        else if (value.includes("silksong")) gameId = "silksong";
-        else if (value.includes("gta")) gameId = "gta5";
+  const keywordMap = {
+    "cs2": ["counter", "strike", "cs2", "counter-strike", "counter-strike 2"],
+    "silksong": ["hollow", "knight", "silksong", "hollow knight", "hollow knight silksong"],
+    "daybydaylight": ["dead", "daylight", "day by daylight", "dbd", "daybydaylight"],
+    "hollowknight": ["hollow", "knight", "hollow knight"],
+    "gta5": ["gta", "grand theft auto", "grand theft auto 5", "gta5"],
+    "rust": ["rust"],
+    "2k26": ["nba", "2k26", "nba 2k26"],
+    "borderlands4": ["borderlands", "borderlands 4", "bl4"]
+  };
 
-        if (gameId) {
-          window.location.href = `detalle.html?id=${gameId}`;
-        } else {
-          alert("Juego no encontrado");
-        }
+  function findGameId(value) {
+    value = value.toLowerCase().trim();
+    for (const [gameId, keywords] of Object.entries(keywordMap)) {
+      for (const kw of keywords) {
+        if (value.includes(kw)) return gameId;
       }
-    });
+    }
+    return null;
   }
+
+  // Evento del botón
+  searchButton.addEventListener("click", () => {
+    const value = searchInput.value;
+    if (value) {
+      const gameId = findGameId(value);
+      if (gameId) {
+        window.location.href = `detalle.html?id=${gameId}`;
+      } else {
+        alert("Juego no encontrado");
+      }
+    }
+  });
+
+  // Enter en input también dispara búsqueda
+  searchInput.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") searchButton.click();
+  });
+
 });
 

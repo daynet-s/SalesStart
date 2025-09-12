@@ -1,148 +1,42 @@
-/* Centrado vertical y horizontal del formulario */
-.container {
-  min-height: 100vh; /* Ocupa toda la altura de la ventana */
-  display: flex; /* Activa flexbox */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-}
-
-.card {
-  background: rgba(34, 34, 68, 0.95); /* Fondo oscuro semitransparente */
-  border-radius: 16px; /* Bordes redondeados */
-  box-shadow: 0 4px 24px rgba(0,0,0,0.3); /* Sombra para profundidad */
-  padding: 2rem; /* Espacio interno */
-  max-width: 400px; /* Limita el ancho máximo */
-  width: 100%; /* Ocupa todo el ancho disponible */
-}
-
-#formSignUpIn label {
-  align-self: flex-start; /* Alinea las etiquetas a la izquierda */
-}
-
-#formSignUpIn input {
-  width: 100%; /* Ocupa todo el ancho disponible */
-  padding: 0.5rem; /* Espacio interno en los campos */
-  margin-bottom: 1px; /* Espacio entre campos (ajustar para menos separación) */
-  border-radius: 8px; /* Bordes redondeados */
-  border: none; /* Sin borde */
-}
-
-#formSignUpIn button {
-  width: 100%; /* Botón ocupa todo el ancho */
-  padding: 0.7rem; /* Espacio interno del botón */
-  border-radius: 8px; /* Bordes redondeados */
-  background: #4e1fa6; /* Color de fondo del botón */
-  color: #fff; /* Color de texto del botón */
-  border: none; /* Sin borde */
-  font-weight: bold; /* Texto en negrita */
-  cursor: pointer; /* Cursor tipo mano */
-  transition: background 0.2s; /* Transición suave al cambiar color */
-}
-
-#formSignUpIn button:hover {
-  background: #6c2ae6; /* Color de fondo al pasar el mouse */
-}
-/* Centrado vertical y horizontal del formulario */
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card {
-  background: rgba(34, 34, 68, 0.95);
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-  padding: 2rem;
-  max-width: 400px;
-  width: 100%;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#formSignUpIn label {
-  align-self: flex-start;
-}
-
-#formSignUpIn input {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  border: none;
-}
-
-#formSignUpIn button {
-  width: 100%;
-  padding: 0.7rem;
-  border-radius: 8px;
-  background: #4e1fa6;
-  color: #fff;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-#formSignUpIn button:hover {
-  background: #6c2ae6;
-}
 /* -------------------- RESET -------------------- */
-/* Quita márgenes y paddings por defecto y asegura box-sizing consistente */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
-
 body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   margin: 0;
   padding: 0;
 }
 
 /* -------------------- BASE -------------------- */
-/* Fuente base Poppins y fondo principal */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
-  font-family: 'Poppins', Arial, sans-serif; /* fuente principal */
-  background: linear-gradient(135deg, #17061f, #1e0046, #3a0d52); /* degradado base */
-  background-attachment: fixed; /* se mantiene fijo al hacer scroll */
-  color: #fff; /* color de texto general */
-  line-height: 1.6; /* altura de línea */
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(135deg, #17061f, #1e0046, #3a0d52);
+  background-attachment: fixed;
+  color: #fff;
+  line-height: 1.6;
 }
 
 /* -------------------- BODY RETRO-RGB -------------------- */
-/* Combina gradiente RGB animado + fondo retro */
 body.retro-rgb {
-  background: linear-gradient(-45deg, #000000, #631111, #0e498c, #04f0cd); /* gradiente multicolor */
-  background-size: 400% 400%; /* tamaño grande para animación suave */
-  animation: gradientRGB 15s ease infinite; /* animación continua */
-  position: relative; /* necesario para pseudo-elementos ::before */
+  background: linear-gradient(-45deg, #000000, #631111, #0e498c, #04f0cd);
+  background-size: 400% 400%;
+  animation: gradientRGB 15s ease infinite;
+  position: relative;
 }
-
-/* Imagen de fondo retro semi-transparente detrás del contenido */
 body.retro-rgb::before {
   content: "";
-  position: fixed; /* fija la imagen al fondo */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("img/fondo_retro.jpg"); /* imagen local */
-  background-size: cover; /* cubre toda la pantalla */
-  background-position: center; /* centrada */
-  opacity: 0.5; /* baja opacidad para no tapar contenido */
-  z-index: -1; /* al fondo */
-  pointer-events: none; /* no bloquea clicks */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url("img/fondo_retro.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
 }
-
-/* Animación del gradiente RGB */
 @keyframes gradientRGB {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -150,83 +44,59 @@ body.retro-rgb::before {
 }
 
 /* -------------------- BODY CYBERPUNK -------------------- */
-/* Fondo estilo cyberpunk con gradiente + imagen */
-body.cyberpunk {
-  font-family: 'Poppins', Arial, sans-serif;
-  background: linear-gradient(135deg, rgba(10,0,20,0.9), rgba(40,0,60,0.8)),
-              url("https://images.unsplash.com/photo-1611606063064-86c8a1d45d2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80");
-  background-size: cover; /* cubre todo el fondo */
-  background-attachment: fixed; /* fijo al hacer scroll */
-  background-position: center; /* centrado */
-  color: #fff;
-  line-height: 1.6;
+body.retro-pixel {
+  background: url("img/fondo_pixel.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 /* -------------------- CONTENEDOR PRINCIPAL -------------------- */
 .container {
   max-width: 1200px;
-  margin: 0 auto; /* centrado horizontal */
+  margin: 0 auto;
   padding: 16px;
-  text-align: center; /* contenido centrado */
+  text-align: center;
 }
-
-/* Estilo del título */
 .container h2 {
-  font-family: 'Orbitron', sans-serif; /* fuente estilo gamer/neón */
+  font-family: 'Orbitron', sans-serif;
   font-size: 2.2em;
   margin-bottom: 12px;
-  letter-spacing: 4px; /* separación entre letras */
+  letter-spacing: 4px;
 }
-
-/* Estilo de la descripción */
 .container p {
-  font-family: 'Press Start 2P', monospace; /* fuente retro 8-bit */
+  font-family: 'Press Start 2P', monospace;
   font-size: 1.4em;
-  color: #ffffffcc; /* ligeramente transparente */
-  text-shadow: 0 0 8px #00f5ff; /* glow azul neón */
+  color: #ffffffcc;
+  text-shadow: 0 0 8px #00f5ff;
 }
-
-/* Responsive */
 @media (max-width: 768px) {
-  .container {
-    max-width: 100%;
-    padding: 8px;
-  }
+  .container { max-width: 100%; padding: 8px; }
 }
 
 /* -------------------- HEADER -------------------- */
 header {
-  background: #1e0046; /* fondo morado oscuro */
+  background: #1e0046;
   padding: 16px 0;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* sombra suave */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
-
 header h1 {
   font-size: 2.2em;
-  color: azure; /* texto blanco-azulado */
-  letter-spacing: 2px; /* separación de letras */
+  color: azure;
+  letter-spacing: 2px;
 }
-
 @media (max-width: 768px) {
-  header {
-    padding: 8px 0;
-    font-size: 1.1em;
-  }
+  header { padding: 8px 0; font-size: 1.1em; }
 }
 
 /* -------------------- TEXTO ANIMADO WAVE -------------------- */
-/* Letras individuales animadas hacia arriba y abajo */
 .wave {
   display: inline-block;
-  animation: wave 1.5s infinite; /* animación continua */
+  animation: wave 4s infinite;
   font-weight: 700;
-  margin-right: 6px; /* separación entre letras */
-  color: #16d4ff; /* azul neón */
-  text-shadow: 0 0 6px #04eeff, 0 0 12px #024c8e; /* glow */
+  margin-right: 6px;
+  color: #16d4ff;
+  text-shadow: 0 0 6px #04eeff, 0 0 12px #024c8e;
 }
-
-/* Delays para animar cada letra secuencialmente */
 .wave:nth-child(1)  { animation-delay: 0s; }
 .wave:nth-child(2)  { animation-delay: 0.1s; }
 .wave:nth-child(3)  { animation-delay: 0.2s; }
@@ -243,8 +113,6 @@ header h1 {
 .wave:nth-child(14) { animation-delay: 1.3s; }
 .wave:nth-child(15) { animation-delay: 1.4s; }
 .wave:nth-child(16) { animation-delay: 1.5s; }
-
-/* Animación wave (sube y baja la letra) */
 @keyframes wave {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-15px); }
@@ -253,25 +121,19 @@ header h1 {
 /* -------------------- BOTÓN CIRCULAR LOGIN -------------------- */
 .btn-circular {
   position: fixed;
-  top: 10px;
-  right: 24px;
+  top: 10px; right: 24px;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: rgba(181, 75, 223, 0.8); /* color base */
-  border-radius: 50%; /* circular */
-  box-shadow: 0 4px 12px rgba(164, 22, 247, 0.3); /* sombra */
+  align-items: center; justify-content: center;
+  width: 60px; height: 60px;
+  background: rgba(181, 75, 223, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(164, 22, 247, 0.3);
   transition: background 0.3s, transform 0.3s;
   border: none;
   z-index: 1000;
-  animation: pulse 2s infinite; /* efecto pulsante */
+  animation: pulse 2s infinite;
 }
-.btn-circular img {
-  width: 32px;
-  height: 32px;
-}
+.btn-circular img { width: 32px; height: 32px; }
 .btn-circular:hover {
   background: #ac47ff;
   transform: scale(1.1);
@@ -284,8 +146,7 @@ header h1 {
 /* -------------------- BARRA DE BÚSQUEDA -------------------- */
 .search-bar {
   position: absolute;
-  top: 20px;
-  left: 30px;
+  top: 20px; left: 30px;
   display: flex;
   align-items: center;
   background: rgba(44, 34, 51, 0.7);
@@ -306,22 +167,15 @@ header h1 {
   background: #a14fc7;
   border: none;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 36px; height: 36px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; justify-content: center;
   margin-left: 8px;
   cursor: pointer;
   transition: background 0.3s;
 }
-.search-bar button:hover {
-  background: #c66cff;
-}
-.search-bar button img {
-  width: 20px;
-  height: 20px;
-}
+.search-bar button:hover { background: #c66cff; }
+.search-bar button img { width: 20px; height: 20px; }
 
 /* -------------------- TARJETAS PRINCIPALES -------------------- */
 .cards {
@@ -347,39 +201,22 @@ header h1 {
 .card:nth-child(4) { animation-delay: 0.8s; }
 .card:nth-child(5) { animation-delay: 1s; }
 .card:nth-child(6) { animation-delay: 1.2s; }
-
 @keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
-
 .card:hover {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 4px 16px rgba(164, 22, 247, 0.6);
 }
-.card .title {
-  font-size: 20px;
-  font-weight: bold;
-}
-.card .price {
-  font-size: 16px;
-  color: #4be37a;
-}
-.card .price.free {
-  color: #e34b4b;
-}
-.card img {
-  width: 68px;
-  border-radius: 10px;
-}
+.card .title { font-size: 20px; font-weight: bold; }
+.card .price { font-size: 16px; color: #4be37a; }
+.card .price.free { color: #e34b4b; }
+.card img { width: 68px; border-radius: 10px; }
 
 /* -------------------- LANZAMIENTOS RECIENTES -------------------- */
 .recent {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  bottom: 20px; left: 20px;
   background: rgba(34, 48, 58, 0.9);
   border-radius: 10px;
   padding: 16px 18px;
@@ -404,33 +241,163 @@ header h1 {
   padding: 12px 10px;
   transition: transform 0.2s ease;
 }
-.recent-card:hover {
-  transform: scale(1.03);
-}
-.recent-card .title {
-  color: #2c2233;
-  font-size: 18px;
-  font-weight: 500;
-}
-.recent-card .price {
-  color: #222;
-  font-size: 15px;
-  font-weight: bold;
-}
-.recent-card .price::before {
-  content: "💲 ";
-}
+.recent-card:hover { transform: scale(1.03); }
+.recent-card .title { color: #2c2233; font-size: 18px; font-weight: 500; }
+.recent-card .price { color: #222; font-size: 15px; font-weight: bold; }
+.recent-card .price::before { content: "💲 "; }
 .recent-card .icons {
   background: #dedbe6;
   border-radius: 0 8px 8px 0;
-  width: 54px;
-  height: 48px;
+  width: 54px; height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.recent-card .icons img { width: 22px; margin-bottom: 4px; }
+
+/* -------------------- LOGIN / REGISTRO -------------------- */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  background: rgba(34, 34, 68, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+}
+.auth-card .card-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
-.recent-card .icons img {
-  width: 22px;
-  margin-bottom: 4px;
+#formSignUpIn label { align-self: flex-start; }
+#formSignUpIn input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.1rem;
+  border-radius: 8px;
+  border: none;
 }
+#formSignUpIn button {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  background: #4e1fa6;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#formSignUpIn button:hover { background: #6c2ae6; }
+
+/* -------------------- DETALLE -------------------- */
+.detalle-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.detalle-left {
+  background: rgba(40, 30, 50, 0.8);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.game-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.game-info h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #16d4ff;
+  text-shadow: 0 0 6px #04eeff, 0 0 12px #024c8e;
+}
+
+.game-info p {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+/* Columna derecha - filtros */
+.detalle-right {
+  background: rgba(44, 34, 51, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.detalle-right h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #a14fc7;
+  padding-bottom: 8px;
+}
+
+.filter-group {
+  margin-bottom: 16px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: #3a3440;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.filter-group select:hover {
+  background: #4b3f56;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .detalle-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+#game-link a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #251166; /* cyan brillante */
+  color: #ffffff; /* texto oscuro para contraste */
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+
+#game-link a:hover {
+  background-color: #3f06bb; /* un cyan más intenso al pasar el mouse */
+  color: #000; /* opcional, aún más contraste */
+}
+
