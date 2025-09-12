@@ -20,8 +20,28 @@ const gamesData = {
     price: 10.99,
     cover: "assets/img/icons/silksong.jpg"
   },
-  "gta5": {
+    "daybydaylight": {
     id: "003",
+    name: "Dead by Daylight",
+    dev: "Behaviour Interactive",
+    pub: "Behaviour Interactive",
+    release: "14 Junio 2016",
+    players: "50,000",
+    price: 11.99,
+    cover: "assets/img/icons/daybydaylight.jpg"
+  },
+  "hollowknight": {
+    id: "004",
+    name: "Hollow Knight",
+    dev: "Team Cherry",
+    pub: "Team Cherry",
+    release: "24 Febrero 2017",
+    players: "40,000",
+    price: 5.55,
+    cover: "assets/img/icons/hollow.jpg"
+  },
+    "gta5": {
+    id: "005",
     name: "Grand Theft Auto V",
     dev: "Rockstar North",
     pub: "Rockstar Games",
@@ -29,6 +49,16 @@ const gamesData = {
     players: "150,000",
     price: 13.99,
     cover: "assets/img/icons/gta5.jpg"
+  },
+    "rust": {
+    id: "006",
+    name: "Rust",
+    dev: "Facepunch Studios",
+    pub: "Facepunch Studios",
+    release: "8 Febrero 2018",
+    players: "70,000",
+    price: 0.00,
+    cover: "assets/img/icons/rust.png"
   }
 };
 

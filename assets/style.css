@@ -15,12 +15,6 @@
   width: 100%; /* Ocupa todo el ancho disponible */
 }
 
-  display: flex; /* Activa flexbox */
-  flex-direction: column; /* Apila los elementos verticalmente */
-  align-items: center; /* Centra los elementos
-.card-body { horizontalmente */
-}
-
 #formSignUpIn label {
   align-self: flex-start; /* Alinea las etiquetas a la izquierda */
 }
