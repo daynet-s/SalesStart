@@ -1,0 +1,454 @@
+/* =================== RESET BÁSICO =================== */
+*,*::before,*::after{box-sizing:border-box}
+html,body,#root{height:100%}
+body,h1,h2,h3,h4,h5,h6,p,ul,ol{margin:0}
+img{display:block;max-width:100%}
+
+/* =================== VARIABLES =================== */
+:root{
+  --bg-dark:#120327;
+  --bg-top:#2a0046;
+  --glass:#2a2a3a;
+  --glass-2:#1f1f2b;
+  --glass-a:rgba(28,25,43,.8);
+  --brand:#9f6bff;
+  --brand-2:#03f0ce;
+  --text:#e8e6f2;
+  --muted:#a7a5b5;
+  --success:#3fe08f;
+  --accent:#7b2cff;
+  --shadow:0 10px 30px rgba(0,0,0,.45);
+  --radius:18px;
+}
+
+/* =================== FONDO / THEME =================== */
+body{
+  font-family:"Poppins",system-ui,Arial,sans-serif;
+  background: linear-gradient(180deg,var(--bg-top),var(--bg-dark)) fixed;
+  color:var(--text);
+  overflow-x:hidden;
+  background-attachment:fixed;
+}
+
+/* Fondo con RGB animado (activar con <body class="retro-rgb">) */
+body.retro-rgb{
+  background: linear-gradient(-45deg,#000,#631111,#0e498c,#04f0cd);
+  background-size:400% 400%;
+  animation:gradientRGB 15s ease infinite;
+  position:relative;
+}
+body.retro-rgb::before{
+  content:"";
+  position:fixed; inset:0; z-index:-2;
+  background:url("/assets/img/fondo_retro.jpg") center/cover no-repeat;
+  opacity:.5;
+}
+@keyframes gradientRGB{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+
+
+
+/* src/index.css */
+
+/* Fondo con RGB animado para Wishlist */
+body.gamer-rgb {
+  background: linear-gradient(-45deg, #000, #631111, #0e498c, #04f0cd);
+  background-size: 400% 400%;
+  animation: gradientRGB 15s ease infinite;
+  position: relative;
+  min-height: 100vh; /* Asegura que cubra todo */
+}
+
+body.gamer-rgb::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  /* Asegúrate de que esta imagen exista en tu carpeta public */
+  background: url("/assets/img/fondo_gamer.jpg") center/cover no-repeat;
+  opacity: 0.5;
+}
+
+@keyframes gradientRGB {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Contenedor estrecho usado en páginas */
+.container-narrow{max-width:1150px;margin-inline:auto;padding:20px}
+
+/* =================== EFECTOS UI (Wave + Neon) =================== */
+.wave-title{
+  font-weight:800;
+  font-size:clamp(28px,4vw,52px);
+  letter-spacing:2px;
+  background:linear-gradient(90deg,#03f0ce,#9f6bff,#0cf,#03f0ce);
+  background-size:300% 100%;
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent;
+  animation:waveGradient 5s linear infinite;
+  text-shadow:0 0 12px rgba(3,240,206,.5);
+}
+@keyframes waveGradient{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+.wave-subtitle{ color:#d9f6ff; text-shadow:0 0 6px rgba(0,173,255,.35) }
+
+.neon-hover{transition:transform .15s ease, box-shadow .15s ease}
+.neon-hover:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 0 1px rgba(123,44,255,.25), 0 10px 24px rgba(0,0,0,.45), 0 0 18px rgba(3,240,206,.35);
+}
+
+/* Panel “vidrio” / compat con Bootstrap */
+.glass{
+  background:var(--glass-a);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:1rem;
+  box-shadow:var(--shadow);
+}
+
+/* === FIX CRÍTICO: evitar fondo blanco de Bootstrap en cards === */
+.card.glass,
+.glass { background: var(--glass-a) !important; color: var(--text) !important; border: 1px solid rgba(255,255,255,.08) !important; }
+.card { background: transparent !important; border-color: rgba(255,255,255,.08) !important; }
+.card.glass hr, .glass hr { border-color: rgba(255,255,255,.12) !important; }
+.card.glass .card-title, .glass .card-title { color:#fff !important; }
+
+/* =================== HOME =================== */
+.card-title{ color:#fff !important }
+
+.games-panel{
+  background: rgba(31,31,43,.72);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  max-width: 900px;
+  margin-left: auto;
+}
+.recent-panel{
+  padding:18px;
+  background: rgba(28,25,43,.85) !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  border-radius:1rem;
+  box-shadow:var(--shadow);
+}
+.recent-panel h3{
+  color:#fff;font-weight:800;text-align:center;margin-bottom:18px;
+}
+
+/* Tarjetas de juegos (lista derecha) */
+.game-card.card{
+  border-radius:1rem;
+  background:rgba(31,31,43,.55);
+  border:1px solid rgba(255,255,255,.06);
+  transition:.25s;
+  padding:12px 18px;
+  margin-bottom:18px;
+}
+.game-card.card:hover{
+  transform:translateY(-3px);
+  border-color:var(--brand-2);
+  box-shadow:0 0 10px var(--brand-2),0 0 18px var(--brand),0 0 28px rgba(3,240,206,.4);
+}
+.game-card .card-body{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0;
+}
+.game-card .title{font-weight:700;color:#fff}
+.game-card .price{color:var(--success);font-weight:600}
+.game-card img{
+  width:72px;height:72px;border-radius:.8rem;object-fit:cover;
+  transition:transform .25s;
+}
+.game-card.card:hover img{transform:scale(1.05)}
+
+/* Panel izquierdo (lanzamientos recientes) */
+.recent-item{
+  display:flex;align-items:center;gap:14px;
+  border-radius:.9rem;
+  padding:10px 14px;margin-bottom:14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
+  transition:.3s;
+  text-decoration:none;color:#fff;
+}
+.recent-item:hover{
+  transform:translateY(-3px);
+  border-color:var(--brand-2);
+  box-shadow:0 0 8px var(--brand-2),0 0 14px rgba(123,44,255,.5);
+}
+.recent-item img{width:60px;height:60px;border-radius:10px;object-fit:cover}
+.recent-item .t{font-weight:600}
+.recent-item .p{color:var(--success);font-weight:700}
+
+/* Botón lupa */
+.search-btn{
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  border:none;color:#fff;font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 12px rgba(3,240,206,.4);
+  transition:.25s;
+}
+.search-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 18px rgba(3,240,206,.6),0 0 22px rgba(159,107,255,.5);
+}
+
+/* =================== DETAIL =================== */
+.detail-layout{display:grid;grid-template-columns:1fr 390px;gap:24px}
+@media (max-width:1100px){.detail-layout{grid-template-columns:1fr}}
+.detail-cover{border-radius:16px;overflow:hidden}
+.detail-title{
+  color:var(--brand-2);
+  text-shadow:0 0 10px rgba(3,240,206,.5);
+  font-weight:800;margin-top:12px;
+}
+.btn-gradient{
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#fff;border:0;
+  box-shadow:0 0 10px rgba(3,240,206,.35);
+  transition:.25s;
+}
+.btn-gradient:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 16px rgba(3,240,206,.55);
+}
+
+/* ===== Detail Filters Section ===== */
+.filter-title {
+  color: var(--brand-2);
+  text-shadow: 0 0 10px rgba(3,240,206,.55);
+  letter-spacing: .5px;
+  font-weight: 800;
+}
+.text-filter-sub { font-size:.95rem; color:#cdefff; text-shadow:0 0 6px rgba(3,240,206,.3); }
+.text-filter-sub span { color:var(--brand-2); font-weight:600; }
+
+.form-floating label { color: rgba(255,255,255,.7); font-weight:600; }
+.form-select.bg-dark{
+  background: rgba(31,31,43,.85) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  color: #fff;
+  border-radius: 10px;
+  transition: all .25s ease;
+}
+.form-select.bg-dark:focus{
+  border-color: var(--brand-2);
+  box-shadow: 0 0 12px rgba(3,240,206,.4);
+}
+.card.glass select option { background:#1f1b2a; color:#fff; }
+
+/* =================== AUTH (Login / Register) =================== */
+.auth-wrap{
+  min-height:calc(100vh - 72px);
+  display:grid;place-items:center;position:relative;
+}
+.auth-wrap::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:url("/assets/img/fondo_pixel.jpg") center/cover no-repeat fixed;
+  opacity:.75;filter:brightness(.55) blur(1px);
+}
+.auth-card{
+  width:min(560px,92vw);
+  padding:28px 24px;
+  text-align:center;
+  color:var(--text);
+  border-radius:1rem;
+  background:var(--glass-a);
+  backdrop-filter:blur(8px);
+  box-shadow:var(--shadow);
+}
+.auth-card label{
+  color:#d9f6ff;
+  font-weight:600;
+  text-shadow:0 0 6px rgba(3,240,206,.25);
+}
+.auth-card input::placeholder{ color:rgba(231,229,255,.6) }
+input:focus,.form-control:focus{
+  outline:none !important;
+  border:2px solid var(--brand-2) !important;
+  box-shadow:0 0 10px rgba(3,240,206,.5) !important;
+}
+.btn-neon{
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#fff;font-weight:600;border:none;padding:10px 14px;border-radius:10px;
+  box-shadow:0 0 10px rgba(3,240,206,.4); transition:.25s;
+}
+.btn-neon:hover{ transform:scale(1.03); box-shadow:0 0 16px rgba(3,240,206,.6),0 0 24px rgba(159,107,255,.5) }
+.btn-outline-neon {
+  border: 2px solid var(--brand-2);
+  color: var(--brand-2);
+  background: transparent;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 50px;
+  transition: .25s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+.btn-outline-neon:hover {
+  background: var(--brand-2);
+  color: #000; /* Texto negro al hacer hover para contraste */
+  box-shadow: 0 0 15px rgba(3, 240, 206, 0.6);
+}
+.is-invalid{ border:2px solid #ff4d6d !important; box-shadow:0 0 8px rgba(255,77,109,.6) }
+.text-glow{ color:#c7f8ff !important; text-shadow:0 0 8px rgba(3,240,206,.55),0 0 16px rgba(159,107,255,.4); font-weight:700; letter-spacing:.3px }
+.alert-danger{
+  background:rgba(255,77,109,.12);
+  color:#ff95a9;
+  border:1px solid rgba(255,77,109,.4);
+  text-shadow:0 0 6px rgba(255,77,109,.2);
+}
+
+/* =================== FOOTER =================== */
+.site-footer{
+  border-top:1px solid rgba(255,255,255,.06);
+  border-radius:1rem 1rem 0 0;
+  padding-top:.8rem;
+}
+.footer-link{
+  color:#e8e6f2;text-decoration:none;font-weight:500;
+  padding:.35rem .65rem;border-radius:.6rem;transition:.2s;
+}
+.footer-link:hover{
+  color:#fff; box-shadow:0 0 8px rgba(3,240,206,.35),0 0 12px rgba(123,44,255,.45);
+  background:rgba(255,255,255,.06);
+}
+.site-footer small{ color:#d8d6f0 !important; text-shadow:0 0 4px rgba(0,0,0,.5) }
+.site-footer small span.text-light{ color:var(--brand-2)!important; text-shadow:0 0 6px rgba(3,240,206,.4) }
+
+/* =================== RESPONSIVE =================== */
+@media (max-width:992px){
+  .container-narrow{padding:16px}
+  .games-panel{max-width:100%;margin:0}
+  .game-card img{width:64px;height:64px}
+}
+@media (max-width:768px){
+  .wave-title{font-size:clamp(24px,6vw,36px)}
+  .recent-panel{padding:14px}
+  .recent-item img{width:52px;height:52px}
+  .game-card.card{padding:10px 14px;margin-bottom:14px}
+  .detail-layout{grid-template-columns:1fr}
+}
+@media (max-width:420px){
+  .container-narrow{padding:12px}
+  .wave-subtitle{font-size:.9rem}
+  .game-card .title{font-size:1rem}
+  .game-card .price{font-size:.95rem}
+}
+
+
+/* --- Textos Neón --- */
+.text-neon-cyan {
+  color: var(--brand-2);
+  text-shadow: 0 0 10px rgba(3, 240, 206, 0.6);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* --- Animaciones --- */
+@keyframes slideInUp {
+  /* IMPORTANTE: Mantenemos translateX(-50%) en cada paso */
+  from { 
+    opacity: 0; 
+    transform: translateX(-50%) translateY(20px) scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(-50%) translateY(0) scale(1); 
+  }
+}
+
+.animate-pop {
+  /* Esta animación es para modales (no necesitan translateX porque usan flexbox para centrar) */
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Botones de Acción (Wishlist) --- */
+.btn-icon-neon {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--muted);
+  transition: all 0.2s;
+}
+.btn-icon-neon:hover { color: #fff; transform: scale(1.1); }
+.btn-icon-neon.edit:hover { border-color: var(--brand-2); box-shadow: 0 0 8px var(--brand-2); color: var(--brand-2); }
+.btn-icon-neon.del:hover { border-color: #ff4d6d; box-shadow: 0 0 8px #ff4d6d; color: #ff4d6d; }
+
+/* --- Toast Notification --- */
+.custom-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  /* El transform base se define aquí, pero la animación lo controlará mientras dure */
+  transform: translateX(-50%);
+  background: rgba(18, 3, 39, 0.95);
+  border: 1px solid var(--brand-2);
+  box-shadow: 0 0 20px rgba(3, 240, 206, 0.3);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 50px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Usamos la animación corregida */
+  animation: slideInUp 0.3s ease-out forwards;
+}
+
+/* --- Botón de Acción Neón (Corazón Detalle) --- */
+.btn-action-neon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(20, 20, 30, 0.6); /* Fondo oscuro semitransparente */
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto rebote */
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+.btn-action-neon i {
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  color: var(--muted); /* Gris por defecto */
+}
+
+/* Efecto Hover: Brillo Rojo/Rosa intenso */
+.btn-action-neon:hover {
+  border-color: #ff4d6d;
+  box-shadow: 0 0 15px rgba(255, 77, 109, 0.6), inset 0 0 10px rgba(255, 77, 109, 0.2);
+  transform: scale(1.15) rotate(5deg);
+}
+
+.btn-action-neon:hover i {
+  color: #ff4d6d;
+  text-shadow: 0 0 10px #ff4d6d;
+  transform: scale(1.2);
+}
+
+/* Efecto Click */
+.btn-action-neon:active {
+  transform: scale(0.95);
+}
